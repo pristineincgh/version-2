@@ -11,20 +11,20 @@ export const metadata: Metadata = {
 
 const StudentRoadmapsPage = async () => {
 	// --- Safe user parsing ---
-	// const rawUser = await getServerUser();
-	// const user = rawUser ? JSON.parse(rawUser) : null;
+	const rawUser = await getServerUser();
+	const user = rawUser ? JSON.parse(rawUser) : null;
 
-	// if (!user?.uid) {
-	// 	return (
-	// 		<div className="p-10 text-center">
-	// 			<p>User not found.</p>
-	// 		</div>
-	// 	);
-	// }
+	if (!user?.uid) {
+		return (
+			<div className="p-10 text-center">
+				<p>User not found.</p>
+			</div>
+		);
+	}
 
-	// const roadmaps = await apiClient.get<{ total: number; items: Roadmap[] }>(
-	// 	`/roadmaps?student_id=${user.uid}`
-	// );
+	const roadmaps = await apiClient.get<{ total: number; items: Roadmap[] }>(
+		`/roadmaps?student_id=${user.uid}`
+	);
 
 	// const roadmapIds = roadmaps.items.map((r) => r.id);
 
@@ -47,9 +47,9 @@ const StudentRoadmapsPage = async () => {
 			/>
 
 			{/* Roadmap Statistics Section */}
-			{/* <RoadmapStats roadmaps={roadmapsWithStatus} />
+			{/* <RoadmapStats roadmaps={roadmapsWithStatus} /> */}
 
-			<RoadmapList roadmaps={roadmapsWithStatus} /> */}
+			<RoadmapList roadmaps={roadmaps.items} />
 		</div>
 	);
 };

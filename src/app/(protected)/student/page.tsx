@@ -54,12 +54,50 @@ const StudentHomePage = async () => {
 		};
 	}
 
+	// const [todos, posts, comments, albums] = await Promise.all([
+	// 	fetch("https://jsonplaceholder.typicode.com/todos").then((res) =>
+	// 		res.json()
+	// 	),
+	// 	fetch("https://jsonplaceholder.typicode.com/posts").then((res) =>
+	// 		res.json()
+	// 	),
+	// 	fetch("https://jsonplaceholder.typicode.com/comments").then((res) =>
+	// 		res.json()
+	// 	),
+	// 	fetch("https://jsonplaceholder.typicode.com/albums").then((res) =>
+	// 		res.json()
+	// 	),
+	// ]);
+
 	return (
 		<div>
 			<OverviewHero />
 
+			{/* <section className="grid grid-cols-4 gap-2">
+				<ul>
+					{todos.map((todo) => (
+						<li key={todo.id}>{todo.title}</li>
+					))}
+				</ul>
+				<ul>
+					{posts.map((post) => (
+						<li key={post.id}>{post.title}</li>
+					))}
+				</ul>
+				<ul>
+					{comments.map((comment) => (
+						<li key={comment.id}>{comment.body}</li>
+					))}
+				</ul>
+				<ul>
+					{albums.map((album) => (
+						<li key={album.id}>{album.title}</li>
+					))}
+				</ul>
+			</section> */}
+
 			<section className="container mx-auto grid gap-6 md:grid-cols-2 py-10">
-				<UpcomingLessonCard />
+				{/* <UpcomingLessonCard /> */}
 
 				{quizWithRelations ? (
 					<UpcomingQuizCard quiz={quizWithRelations} />

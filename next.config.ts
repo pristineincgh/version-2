@@ -15,6 +15,7 @@ const nextConfig: NextConfig = {
 			new URL("https://static-00.iconduck.com/**"),
 			new URL("https://dummyimage.com/**"),
 			new URL("https://placehold.co/**"),
+			new URL("https://via.placeholder.com/**"),
 		],
 	},
 };
